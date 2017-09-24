@@ -38,4 +38,5 @@ public class Constants {
 
 	// resource constants
 	public static final String DEFAULT_INDEX_FILE = "index.html";
+	public static final String LOGGER_NAME = "gayatri-aishwarya-web-server";
 }

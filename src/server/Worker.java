@@ -18,10 +18,13 @@ public class Worker extends Thread {
 	Socket client;
 	HttpdConf config;
 	MimeTypes mimes;
+	
+	int clientId;
 
 	public HashMap<String, String> default_headers = new HashMap<String, String>();
 
-	public Worker(Socket socket, HttpdConf config, MimeTypes mimes) {
+	public Worker(int clientId, Socket socket, HttpdConf config, MimeTypes mimes) {
+		this.clientId = clientId;
 		this.client = socket;
 		this.config = config;
 		this.mimes = mimes;
@@ -36,10 +39,13 @@ public class Worker extends Thread {
 			out = new PrintWriter(client.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			Request request = new Request(in);
+			ServerLog.print("Request:\n" + request.printRequest());
 			Resource resource = new Resource(request.getUri(), config);
 			ResponseFactory responseFactory = new ResponseFactory();
-			Response response = responseFactory.getResponse(mimes, request, resource);
-			out.print(response.writeString());
+			Response response = responseFactory.getResponse(request, resource);
+			String responseStr = response.writeString();
+			ServerLog.print("Response:\n" + responseStr);
+			out.print(responseStr);
 			out.flush();
 		} catch (IOException e) {
 			e.printStackTrace();

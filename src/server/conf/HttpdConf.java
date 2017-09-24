@@ -90,4 +90,8 @@ public class HttpdConf {
 	public Map<String, String> getScriptAliases() {
 		return scriptAliases;
 	}
+	
+	public String getLogFilePath() {
+		return logFile;
+	}
 }

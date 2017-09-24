@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import server.Constants;
+import server.Utils;
 import server.Verb;
 
 public class Request {
@@ -18,6 +19,10 @@ public class Request {
 	String contentType;
 
 	boolean isValid = true;
+	
+	String printStatusLine;
+	String printHeader;
+	String printBody;
 
 	public Request(BufferedReader in) {
 		String line;
@@ -40,6 +45,7 @@ public class Request {
 				char[] buffer = new char[length];
 				in.read(buffer, 0, length);
 				body = new String(buffer, 0, buffer.length);
+				printBody = body;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -61,6 +67,7 @@ public class Request {
 			uri = content[1].trim();
 			httpVersion = content[2].trim();
 		}
+		printStatusLine = input;
 	}
 
 	private void parseHeader(String input) {
@@ -103,5 +110,10 @@ public class Request {
 	
 	public String getContentType() {
 		return contentType;
+	}
+	
+	public String printRequest() {
+		printHeader = Utils.getHeaderString(headers);
+		return printStatusLine + "\n" + printHeader + printBody;
 	}
 }
