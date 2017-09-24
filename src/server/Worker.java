@@ -38,7 +38,7 @@ public class Worker extends Thread {
 			Request request = new Request(in);
 			Resource resource = new Resource(request.getUri(), config);
 			ResponseFactory responseFactory = new ResponseFactory();
-			Response response = responseFactory.getResponse(request, resource);
+			Response response = responseFactory.getResponse(mimes, request, resource);
 			out.print(response.writeString());
 			out.flush();
 		} catch (IOException e) {

@@ -1,12 +1,13 @@
 package server.response;
 
 import server.Constants;
-import server.Resource;
+import server.conf.MimeTypes;
+import server.request.Request;
 
 public class Unauthorized extends Response {
 
-	public Unauthorized(Resource resource) {
-		super(resource);
+	public Unauthorized(MimeTypes mimes, Request request) {
+		super(mimes, request);
 
 	}
 
@@ -27,6 +28,7 @@ public class Unauthorized extends Response {
 		for (String key : headers.keySet()) {
 			sb.append(key + ": " + headers.get(key) + "\n");
 		}
+		sb.append("\n");
 		return sb.toString();
 	}
 

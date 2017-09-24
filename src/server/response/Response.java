@@ -4,23 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 import server.Constants;
-import server.Resource;
 import server.Utils;
+import server.conf.MimeTypes;
+import server.request.Request;
 
 public class Response implements IResponse {
 
 	int code;
 	String reasonPhrase;
-	Resource resource;
 	Map<String, String> headers;
-
-	public Response(Resource resource) {
-		this.resource = resource;
+	
+	public Response(MimeTypes mimes, Request request) {
 		if (headers == null)
 			headers = new HashMap<String, String>();
+		
 		headers.put(Constants.DATE, Utils.getDate());
 		headers.put(Constants.SERVER, Constants.SERVER_NAME);
-		headers.put(Constants.CONTENT_TYPE, Constants.HTML_MIME_TYPE);
+		headers.put(Constants.CONTENT_TYPE, request.getContentType());
 	}
 
 	public String writeString() {

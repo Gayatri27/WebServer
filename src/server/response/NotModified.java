@@ -1,12 +1,13 @@
 package server.response;
 
 import server.Constants;
-import server.Resource;
+import server.conf.MimeTypes;
+import server.request.Request;
 
 public class NotModified extends Response {
 
-	public NotModified(Resource resource) {
-		super(resource);
+	public NotModified(MimeTypes mimes, Request request) {
+		super(mimes, request);
 
 	}
 
@@ -27,6 +28,7 @@ public class NotModified extends Response {
 		for (String key : headers.keySet()) {
 			sb.append(key + ": " + headers.get(key) + "\n");
 		}
+		sb.append("\n");
 		return sb.toString();
 	}
 

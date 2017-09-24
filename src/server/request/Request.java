@@ -15,6 +15,7 @@ public class Request {
 	String verb;
 	String httpVersion;
 	Map<String, String> headers;
+	String contentType;
 
 	boolean isValid = true;
 
@@ -66,8 +67,14 @@ public class Request {
 		if (headers == null)
 			headers = new HashMap<String, String>();
 		String[] content = input.split(": ");
-		if (content.length == 2)
-			headers.put(content[0].trim(), content[1].trim());
+		if (content.length == 2) {
+			if(content[0].trim().equals(Constants.CONTENT_TYPE)) {
+				String[] tmp = content[1].trim().split("; ");
+				headers.put(content[0].trim(), tmp[0].trim());
+			} else
+				headers.put(content[0].trim(), content[1].trim());
+		}
+		contentType = headers.get(Constants.CONTENT_TYPE);
 	}
 
 	public String getUri() {
@@ -92,5 +99,9 @@ public class Request {
 
 	public boolean isModified() {
 		return !headers.containsKey(Constants.IF_MODIFIED_SINCE);
+	}
+	
+	public String getContentType() {
+		return contentType;
 	}
 }

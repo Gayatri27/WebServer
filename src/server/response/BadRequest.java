@@ -1,13 +1,13 @@
 package server.response;
 
 import server.Constants;
-import server.Resource;
+import server.conf.MimeTypes;
+import server.request.Request;
 
 public class BadRequest extends Response {
 
-	public BadRequest(Resource resource) {
-		super(resource);
-
+	public BadRequest(MimeTypes mimes, Request request) {
+		super(mimes, request);
 	}
 
 	@Override
@@ -27,6 +27,7 @@ public class BadRequest extends Response {
 		for (String key : headers.keySet()) {
 			sb.append(key + ": " + headers.get(key) + "\n");
 		}
+		sb.append("\n");
 		return sb.toString();
 	}
 

@@ -41,8 +41,4 @@ public class MimeTypes {
 			}
 		}
 	}
-
-	public String lookup(String extension) {
-		return null;
-	}
 }
