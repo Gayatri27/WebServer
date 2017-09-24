@@ -5,6 +5,8 @@ import server.Utils;
 
 public class Htaccess {
 
+	HttpdConf configuration;
+
 	String userFile;
 	String authType;
 	String authName;
@@ -12,8 +14,14 @@ public class Htaccess {
 
 	boolean isAvailable = true;
 
+	public Htaccess(HttpdConf configuration) {
+		this.configuration = configuration;
+	}
+
 	public void load() {
-		String file = Utils.readFile(Constants.HTACCESS_FILE_LOCATION);
+		String fileLocation = configuration.accessFileName == null ? Constants.HTACCESS_FILE_LOCATION
+				: configuration.getDocumentRoot() + Constants.CONFIG_FILES_LOCATION + configuration.accessFileName;
+		String file = Utils.readFile(fileLocation);
 
 		if (file == null) {
 			isAvailable = false;

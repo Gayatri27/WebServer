@@ -34,8 +34,8 @@ public class Request {
 			}
 
 			// parseBody
-			if (headers.containsKey(Constants.CONTENT_LENGTH_TAG)) {
-				int length = Integer.valueOf(headers.get(Constants.CONTENT_LENGTH_TAG));
+			if (headers.containsKey(Constants.CONTENT_LENGTH)) {
+				int length = Integer.valueOf(headers.get(Constants.CONTENT_LENGTH));
 				char[] buffer = new char[length];
 				in.read(buffer, 0, length);
 				body = new String(buffer, 0, buffer.length);
@@ -85,8 +85,12 @@ public class Request {
 	public String getAuthInfo() {
 		return headers.get(Constants.AUTHORIZATION);
 	}
-	
+
 	public Verb getVerb() {
 		return Verb.valueOf(verb);
+	}
+
+	public boolean isModified() {
+		return !headers.containsKey(Constants.IF_MODIFIED_SINCE);
 	}
 }

@@ -9,9 +9,9 @@ import java.util.Map;
 import server.Utils;
 
 public class Htpassword {
-
+	
 	private static Map<String, String> users;
-
+	
 	public void load(String filePath) {
 		String file = Utils.readFile(filePath);
 		String[] lines = file.split("\\r?\\n");

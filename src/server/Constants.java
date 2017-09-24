@@ -16,6 +16,7 @@ public class Constants {
 	public static final String LOG_FILE_TAG = "LogFile";
 	public static final String SCRIPT_ALIAS_TAG = "ScriptAlias";
 	public static final String ALIAS_TAG = "Alias";
+	public static final String ACCESS_FILE_NAME = "AccessFileName";
 
 	// _.htaccess tags
 	public static final String AUTH_USER_FILE_TAG = "AuthUserFile";
@@ -24,10 +25,16 @@ public class Constants {
 	public static final String REQUIRE_TAG = "Require";
 
 	// header identifiers
-	public static final String CONTENT_LENGTH_TAG = "Content-Length";
+	public static final String CONTENT_LENGTH = "Content-Length";
+	public static final String CONTENT_TYPE = "Content-Type";
 	public static final String HTTP_VERSION_1_0 = "HTTP/1.0";
 	public static final String HTTP_VERSION_1_1 = "HTTP/1.1";
 	public static final String AUTHORIZATION = "Authorization";
+	public static final String IF_MODIFIED_SINCE = "If-Modified-Since";
+	public static final String DATE = "Date";
+	public static final String SERVER = "Server";
+	public static final String SERVER_NAME = "Gayatri Aishwarya Web Server 1.0";
+	public static final String HTML_MIME_TYPE = "text/html";
 
 	// resource constants
 	public static final String DEFAULT_INDEX_FILE = "index.html";
