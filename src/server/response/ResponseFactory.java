@@ -62,13 +62,13 @@ public class ResponseFactory {
 	private Response handleVerbResponses(Request request, Resource resource) {
 		switch (request.getVerb()) {
 		case GET:
-			return new OK(resource);
+			handleGet(request, resource);
 		case PUT:
-			return new OK(resource);
+			return handlePut(request, resource);
 		case DELETE:
-			return new OK(resource);
+			return handleDelete(request, resource);
 		case POST:
-			return new OK(resource);
+			return handlePost(request, resource);
 		case HEAD:
 			return new OK(resource);
 		default:
@@ -77,12 +77,32 @@ public class ResponseFactory {
 	}
 
 	private Response processScript(Request request, Resource resource) {
-		if(executeScript(request))
+		if (ResponseHelper.executeScript(request, resource))
 			return new OK(resource);
 		return new InternalServerError(resource);
 	}
-	
-	private boolean executeScript(Request request) {
-		return false;
+
+	private Response handleGet(Request request, Resource resource) {
+		if (request.isModified())
+			return handlePost(request, resource);
+		return new NotModified(resource);
+	}
+
+	private Response handlePut(Request request, Resource resource) {
+		if (ResponseHelper.createFile(request, resource))
+			return new Created(resource);
+		return new InternalServerError(resource);
+	}
+
+	private Response handleDelete(Request request, Resource resource) {
+		if (ResponseHelper.deleteFile(request, resource))
+			return new NoContent(resource);
+		return new InternalServerError(resource);
+	}
+
+	private Response handlePost(Request request, Resource resource) {
+		if (ResponseHelper.sendFile(request, resource))
+			return new OK(resource);
+		return new InternalServerError(resource);
 	}
 }

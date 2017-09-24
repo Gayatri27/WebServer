@@ -1,12 +1,37 @@
 package server.response;
 
+import server.Constants;
 import server.Resource;
 
 public class Forbidden extends Response {
 
 	public Forbidden(Resource resource) {
 		super(resource);
-		statusLine = "HTTP/1.1 403 Forbidden";
+
 	}
 
+	@Override
+	public int getCode() {
+		return 403;
+	}
+
+	@Override
+	public String getReasonPhrase() {
+		return ResponseCode._403.getResponseCodeStr();
+	}
+
+	@Override
+	public String getHeaders() {
+		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
+		StringBuilder sb = new StringBuilder();
+		for (String key : headers.keySet()) {
+			sb.append(key + ": " + headers.get(key) + "\n");
+		}
+		return sb.toString();
+	}
+
+	@Override
+	public String getBody() {
+		return "<h1>403</h1><h2>Forbidden</h2>";
+	}
 }

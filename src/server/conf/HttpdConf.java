@@ -14,6 +14,7 @@ public class HttpdConf {
 	String documentRoot = null;
 	int port = -1;
 	String logFile = null;
+	String accessFileName = null;
 
 	String file = null;
 
@@ -60,6 +61,9 @@ public class HttpdConf {
 			if (aliases == null)
 				aliases = new HashMap<String, String>();
 			aliases.put(value1, value2);
+			break;
+		case Constants.ACCESS_FILE_NAME:
+			accessFileName = value1;
 			break;
 		default:
 			System.out.println("Invalid");
