@@ -7,7 +7,7 @@ public class Constants {
 	public static final String MIME_TYPES_FILE_LOCATION = "src/server/conf/mime.types";
 	public static final String HTACCESS_FILE_LOCATION = "src/server/conf/_.htaccess";
 	public static final String HTPASSWORD_FILE_LOCATION = "src/server/conf/_.htpasswd";
-	public static final String CONFIG_FILES_LOCATION = "config/assets";
+	public static final String CONFIG_FILES_LOCATION = "conf/";
 
 	// httpd.conf tags
 	public static final String SERVER_ROOT_TAG = "ServerRoot";
