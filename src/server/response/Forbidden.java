@@ -1,13 +1,13 @@
 package server.response;
 
 import server.Constants;
-import server.Resource;
+import server.conf.MimeTypes;
+import server.request.Request;
 
 public class Forbidden extends Response {
 
-	public Forbidden(Resource resource) {
-		super(resource);
-
+	public Forbidden(MimeTypes mimes, Request request) {
+		super(mimes, request);
 	}
 
 	@Override
@@ -27,6 +27,7 @@ public class Forbidden extends Response {
 		for (String key : headers.keySet()) {
 			sb.append(key + ": " + headers.get(key) + "\n");
 		}
+		sb.append("\n");
 		return sb.toString();
 	}
 
