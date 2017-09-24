@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class Utils {
 
@@ -42,5 +43,14 @@ public class Utils {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 		return dateFormat.format(date);
+	}
+	
+	public static String getHeaderString(Map<String, String> headers) {
+		StringBuilder sb = new StringBuilder();
+		for (String key : headers.keySet()) {
+			sb.append(key + ": " + headers.get(key) + "\n");
+		}
+		sb.append("\n");
+		return sb.toString();
 	}
 }

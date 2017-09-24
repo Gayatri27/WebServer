@@ -1,0 +1,35 @@
+Sep 24, 2017 4:06:34 AM server.ServerLog print
+INFO: Server initialzed successfully
+
+Sep 24, 2017 4:06:34 AM server.ServerLog print
+INFO: Starting server on port 8096
+
+Sep 24, 2017 4:06:37 AM server.ServerLog print
+INFO: Connected to client 1
+
+Sep 24, 2017 4:06:37 AM server.ServerLog print
+INFO: Request:
+POST / HTTP/1.1
+Origin: chrome-extension://aejoelaoggembcahagimdiliamlcdmfm
+Authorization: Basic YWJjOjEyMzQ=
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+Content-Length: 9
+Content-Type: application/json
+
+name=Andy
+
+Sep 24, 2017 4:06:37 AM server.ServerLog print
+INFO: Response:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 23
+Date: 2017/09/24 04:06:37
+Content-Type: application/json
+
+<h1>200</h1><h2>OK</h2>
+

@@ -1,13 +1,13 @@
 package server.response;
 
 import server.Constants;
-import server.conf.MimeTypes;
+import server.Utils;
 import server.request.Request;
 
 public class NotFound extends Response {
 
-	public NotFound(MimeTypes mimes, Request request) {
-		super(mimes, request);
+	public NotFound(Request request) {
+		super(request);
 
 	}
 
@@ -24,12 +24,7 @@ public class NotFound extends Response {
 	@Override
 	public String getHeaders() {
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
-		StringBuilder sb = new StringBuilder();
-		for (String key : headers.keySet()) {
-			sb.append(key + ": " + headers.get(key) + "\n");
-		}
-		sb.append("\n");
-		return sb.toString();
+		return Utils.getHeaderString(headers);
 	}
 
 	@Override

@@ -2,7 +2,6 @@ package server.response;
 
 import server.Resource;
 import server.conf.Htpassword;
-import server.conf.MimeTypes;
 import server.request.Request;
 
 public class ResponseFactory {
@@ -14,27 +13,27 @@ public class ResponseFactory {
 	 * Unauthorized 403 Forbidden 404 Not Found 500 Internal Server Error
 	 */
 
-	public Response getResponse(MimeTypes mimes, Request request, Resource resource) {
+	public Response getResponse(Request request, Resource resource) {
 		try {
 			if (!validRequest(request))
-				return new BadRequest(mimes, request);
+				return new BadRequest(request);
 
 			if (!serverAuthenticationAvailable(resource))
-				return new NotFound(mimes, request);
+				return new NotFound(request);
 
 			if (!authHeaderAvailable(request))
-				return new Unauthorized(mimes, request);
+				return new Unauthorized(request);
 
 			if (!userAuthenticated(request))
-				return new Forbidden(mimes, request);
+				return new Forbidden(request);
 
 			if (!scriptAliased(resource))
-				return handleVerbResponses(mimes, request, resource);
+				return handleVerbResponses(request, resource);
 			else
-				return processScript(mimes, request, resource);
+				return processScript(request, resource);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new InternalServerError(mimes, request);
+			return new InternalServerError(request);
 		}
 	}
 
@@ -60,50 +59,50 @@ public class ResponseFactory {
 		return resource.isUriScriptAliased();
 	}
 
-	private Response handleVerbResponses(MimeTypes mimes, Request request, Resource resource) {
+	private Response handleVerbResponses(Request request, Resource resource) {
 		switch (request.getVerb()) {
 		case GET:
-			handleGet(mimes, request, resource);
+			handleGet(request, resource);
 		case PUT:
-			return handlePut(mimes, request, resource);
+			return handlePut(request, resource);
 		case DELETE:
-			return handleDelete(mimes, request, resource);
+			return handleDelete(request, resource);
 		case POST:
-			return handlePost(mimes, request, resource);
+			return handlePost(request, resource);
 		case HEAD:
-			return new OK(mimes, request);
+			return new OK(request);
 		default:
-			return new InternalServerError(mimes, request);
+			return new InternalServerError(request);
 		}
 	}
 
-	private Response processScript(MimeTypes mimes, Request request, Resource resource) {
+	private Response processScript(Request request, Resource resource) {
 		if (ResponseHelper.executeScript(request, resource))
-			return new OK(mimes, request);
-		return new InternalServerError(mimes, request);
+			return new OK(request);
+		return new InternalServerError(request);
 	}
 
-	private Response handleGet(MimeTypes mimes, Request request, Resource resource) {
+	private Response handleGet(Request request, Resource resource) {
 		if (request.isModified())
-			return handlePost(mimes, request, resource);
-		return new NotModified(mimes, request);
+			return handlePost(request, resource);
+		return new NotModified(request);
 	}
 
-	private Response handlePut(MimeTypes mimes, Request request, Resource resource) {
+	private Response handlePut(Request request, Resource resource) {
 		if (ResponseHelper.createFile(request, resource))
-			return new Created(mimes, request);
-		return new InternalServerError(mimes, request);
+			return new Created(request);
+		return new InternalServerError(request);
 	}
 
-	private Response handleDelete(MimeTypes mimes, Request request, Resource resource) {
+	private Response handleDelete(Request request, Resource resource) {
 		if (ResponseHelper.deleteFile(request, resource))
-			return new NoContent(mimes, request);
-		return new InternalServerError(mimes, request);
+			return new NoContent(request);
+		return new InternalServerError(request);
 	}
 
-	private Response handlePost(MimeTypes mimes, Request request, Resource resource) {
+	private Response handlePost(Request request, Resource resource) {
 		if (ResponseHelper.sendFile(request, resource))
-			return new OK(mimes, request);
-		return new InternalServerError(mimes, request);
+			return new OK(request);
+		return new InternalServerError(request);
 	}
 }

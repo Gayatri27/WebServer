@@ -13,6 +13,8 @@ public class WebServer {
 	HttpdConf configuration;
 	MimeTypes mimeTypes;
 	ServerSocket socket;
+	
+	int clientId = 0;
 
 	public static void main(String[] args) {
 		WebServer httpServer = new WebServer();
@@ -31,16 +33,25 @@ public class WebServer {
 
 		Htpassword htpassword = new Htpassword();
 		htpassword.load(htaccess.getUserFile());
+		
+		ServerLog serverLog = new ServerLog();
+		serverLog.init(configuration.getLogFilePath());
+		
+		ServerLog.print("Server initialzed successfully");
+		ServerLog.print("Starting server on port " + configuration.getPort());
 
 		try {
 			socket = new ServerSocket(configuration.getPort());
 			Socket client = null;
 			while (true) {
 				client = socket.accept();
-				new Thread(new Worker(client, configuration, mimeTypes)).start();
+				clientId++;
+				ServerLog.print("Connected to client " + clientId);
+				new Thread(new Worker(clientId, client, configuration, mimeTypes)).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+			ServerLog.print("Server error " + e.getMessage());
 		}
 	}
 }

@@ -5,7 +5,6 @@ import java.util.Map;
 
 import server.Constants;
 import server.Utils;
-import server.conf.MimeTypes;
 import server.request.Request;
 
 public class Response implements IResponse {
@@ -14,7 +13,7 @@ public class Response implements IResponse {
 	String reasonPhrase;
 	Map<String, String> headers;
 	
-	public Response(MimeTypes mimes, Request request) {
+	public Response(Request request) {
 		if (headers == null)
 			headers = new HashMap<String, String>();
 		
@@ -40,11 +39,7 @@ public class Response implements IResponse {
 	@Override
 	public String getHeaders() {
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
-		StringBuilder sb = new StringBuilder();
-		for (String key : headers.keySet()) {
-			sb.append(key + ": " + headers.get(key) + "\n");
-		}
-		return sb.toString();
+		return Utils.getHeaderString(headers);
 	}
 
 	@Override
