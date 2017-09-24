@@ -14,25 +14,27 @@ public class ResponseFactory {
 	 */
 
 	public Response getResponse(Request request, Resource resource) {
+		try {
+			if (!validRequest(request))
+				return new BadRequest(resource);
 
-		if (!validRequest(request))
-			return new BadRequest(resource);
+			if (!serverAuthenticationAvailable(resource))
+				return new NotFound(resource);
 
-		if (!serverAuthenticationAvailable(resource))
-			return new NotFound(resource);
+			if (!authHeaderAvailable(request))
+				return new Unauthorized(resource);
 
-		if (!authHeaderAvailable(request))
-			return new Unauthorized(resource);
+			if (!userAuthenticated(request))
+				return new Forbidden(resource);
 
-		if (!userAuthenticated(request))
-			return new Forbidden(resource);
-
-		if (!scriptAliased(resource))
-			handleVerbResponses(request, resource);
-		else
-			processScript(request, resource);
-
-		return null;
+			if (!scriptAliased(resource))
+				return handleVerbResponses(request, resource);
+			else
+				return processScript(request, resource);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new InternalServerError(resource);
+		}
 	}
 
 	private boolean validRequest(Request request) {
@@ -49,18 +51,38 @@ public class ResponseFactory {
 
 	private boolean userAuthenticated(Request request) {
 		Htpassword htpassword = new Htpassword();
-		return htpassword.isAuthorized(request.getAuthInfo());
+		// return htpassword.isAuthorized(request.getAuthInfo());
+		return true;
 	}
 
 	private boolean scriptAliased(Resource resource) {
 		return resource.isUriScriptAliased();
 	}
 
-	private void handleVerbResponses(Request request, Resource resource) {
-
+	private Response handleVerbResponses(Request request, Resource resource) {
+		switch (request.getVerb()) {
+		case GET:
+			return new OK(resource);
+		case PUT:
+			return new OK(resource);
+		case DELETE:
+			return new OK(resource);
+		case POST:
+			return new OK(resource);
+		case HEAD:
+			return new OK(resource);
+		default:
+			return new InternalServerError(resource);
+		}
 	}
 
-	private void processScript(Request request, Resource resource) {
-
+	private Response processScript(Request request, Resource resource) {
+		if(executeScript(request))
+			return new OK(resource);
+		return new InternalServerError(resource);
+	}
+	
+	private boolean executeScript(Request request) {
+		return false;
 	}
 }

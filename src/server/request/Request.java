@@ -85,4 +85,8 @@ public class Request {
 	public String getAuthInfo() {
 		return headers.get(Constants.AUTHORIZATION);
 	}
+	
+	public Verb getVerb() {
+		return Verb.valueOf(verb);
+	}
 }
