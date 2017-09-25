@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
@@ -12,14 +13,16 @@ public class Response implements IResponse {
 	int code;
 	String reasonPhrase;
 	Map<String, String> headers;
+	Request request;
 	
-	public Response(Request request) {
+	public Response(Request request, Resource resource) {
+		this.request = request;
 		if (headers == null)
 			headers = new HashMap<String, String>();
 		
 		headers.put(Constants.DATE, Utils.getDate());
 		headers.put(Constants.SERVER, Constants.SERVER_NAME);
-		headers.put(Constants.CONTENT_TYPE, request.getContentType());
+		headers.put(Constants.CONTENT_TYPE, request.getContentType() != null ? request.getContentType() : Constants.HTML_MIME_TYPE);
 	}
 
 	public String writeString() {
@@ -47,7 +50,17 @@ public class Response implements IResponse {
 		return "<h1>500</h1><h2>Internal Server Error</h2>";
 	}
 
-	private String getStatusLine() {
-		return Constants.HTTP_VERSION_1_1 + " " + getCode() + " " + getReasonPhrase() + "\n";
+	public String getStatusLine() {
+		return request.getHttpVersion() + " " + getCode() + " " + getReasonPhrase() + "\n";
+	}
+
+	@Override
+	public byte[] getData() {
+		return null;
+	}
+
+	@Override
+	public boolean isFile() {
+		return false;
 	}
 }

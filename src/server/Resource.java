@@ -12,9 +12,13 @@ public class Resource {
 	public Resource(String uri, HttpdConf config) {
 		this.uri = uri;
 		this.httpdConf = config;
+		if(this.uri.length() == 1 && this.uri.equals("/")) {
+			String accessFileName = httpdConf.getAccessFileName();
+			this.uri = accessFileName == null ? Constants.DEFAULT_INDEX_FILE : accessFileName;
+		}
 	}
 
-	private String getAbsolutePath() {
+	public String getAbsolutePath() {
 		String absolutePath = resolveUriPath();
 		return isFile(absolutePath) ? absolutePath : appendDirIndex(absolutePath);
 	}
@@ -32,13 +36,17 @@ public class Resource {
 		return httpdConf.getScriptAliases().containsKey(uri) ? true : false;
 	}
 
-	private boolean isFile(String path) {
+	public boolean isFile(String path) {
 		File file = new File(path);
 		return file.isFile() ? true : false;
 	}
 
 	private String resolveUriPath() {
-		return httpdConf.getDocumentRoot() + getUnmodifiedUri();
+		String unmodifiedUri = getUnmodifiedUri();
+		String documentRoot = httpdConf.getDocumentRoot();
+		if(unmodifiedUri.startsWith("/") & documentRoot.endsWith("/"))
+			return documentRoot + unmodifiedUri.substring(1, uri.length());
+		return documentRoot + unmodifiedUri;
 	}
 
 	private String getUnmodifiedUri() {

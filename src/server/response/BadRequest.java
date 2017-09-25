@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class BadRequest extends Response {
 
-	public BadRequest(Request request) {
-		super(request);
+	public BadRequest(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

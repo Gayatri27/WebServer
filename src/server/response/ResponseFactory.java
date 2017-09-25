@@ -1,5 +1,7 @@
 package server.response;
 
+import java.io.File;
+
 import server.Resource;
 import server.conf.Htpassword;
 import server.request.Request;
@@ -16,16 +18,16 @@ public class ResponseFactory {
 	public Response getResponse(Request request, Resource resource) {
 		try {
 			if (!validRequest(request))
-				return new BadRequest(request);
+				return new BadRequest(request, resource);
 
 			if (!serverAuthenticationAvailable(resource))
-				return new NotFound(request);
+				return new NotFound(request, resource);
 
-			if (!authHeaderAvailable(request))
-				return new Unauthorized(request);
+//			if (!authHeaderAvailable(request))
+//				return new Unauthorized(request, resource);
 
-			if (!userAuthenticated(request))
-				return new Forbidden(request);
+//			if (!userAuthenticated(request))
+//				return new Forbidden(request, resource);
 
 			if (!scriptAliased(resource))
 				return handleVerbResponses(request, resource);
@@ -33,7 +35,7 @@ public class ResponseFactory {
 				return processScript(request, resource);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new InternalServerError(request);
+			return new InternalServerError(request, resource);
 		}
 	}
 
@@ -61,7 +63,7 @@ public class ResponseFactory {
 	private Response handleVerbResponses(Request request, Resource resource) {
 		switch (request.getVerb()) {
 		case GET:
-			handleGet(request, resource);
+			return handleGet(request, resource);
 		case PUT:
 			return handlePut(request, resource);
 		case DELETE:
@@ -69,39 +71,44 @@ public class ResponseFactory {
 		case POST:
 			return handlePost(request, resource);
 		case HEAD:
-			return new OK(request);
+			return new OK(request, resource);
 		default:
-			return new InternalServerError(request);
+			return new InternalServerError(request, resource);
 		}
 	}
 
 	private Response processScript(Request request, Resource resource) {
 		if (ResponseHelper.executeScript(request, resource))
-			return new OK(request);
-		return new InternalServerError(request);
+			return new OK(request, resource);
+		return new InternalServerError(request, resource);
 	}
 
 	private Response handleGet(Request request, Resource resource) {
 		if (request.isModified())
 			return handlePost(request, resource);
-		return new NotModified(request);
+		return new NotModified(request, resource);
 	}
 
 	private Response handlePut(Request request, Resource resource) {
 		if (ResponseHelper.createFile(request, resource))
-			return new Created(request);
-		return new InternalServerError(request);
+			return new Created(request, resource);
+		return new InternalServerError(request, resource);
 	}
 
 	private Response handleDelete(Request request, Resource resource) {
 		if (ResponseHelper.deleteFile(request, resource))
-			return new NoContent(request);
-		return new InternalServerError(request);
+			return new NoContent(request, resource);
+		return new InternalServerError(request, resource);
 	}
 
 	private Response handlePost(Request request, Resource resource) {
-		if (ResponseHelper.sendFile(request, resource))
-			return new OK(request);
-		return new InternalServerError(request);
+		String path = resource.getAbsolutePath();
+		if(resource.isFile(path)) {
+			OK OK = new OK(request, resource);
+			OK.setFile(true);
+			OK.setFilePath(path);
+			return OK;
+		} else
+			return new OK(request, resource);
 	}
 }

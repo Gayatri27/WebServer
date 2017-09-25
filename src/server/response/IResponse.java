@@ -9,4 +9,8 @@ public interface IResponse {
 	public String getHeaders();
 	
 	public String getBody();
+	
+	public byte[] getData();
+	
+	public boolean isFile();
 }

@@ -1,116 +1,894 @@
-Sep 24, 2017 6:52:38 PM server.ServerLog print
+Sep 25, 2017 3:29:42 AM server.ServerLog print
 INFO: Server initialized successfully
 
-Sep 24, 2017 6:52:38 PM server.ServerLog print
+Sep 25, 2017 3:29:42 AM server.ServerLog print
 INFO: Starting server on port 8096
 
-Sep 24, 2017 6:52:49 PM server.ServerLog print
+Sep 25, 2017 3:29:56 AM server.ServerLog print
 INFO: Connected to client 1
 
-Sep 24, 2017 6:52:49 PM server.ServerLog print
-INFO: Request:
-GET / HTTP/1.1
-Cache-Control: no-cache
-Accept: */*
-Connection: keep-alive
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-Host: localhost:8096
-Postman-Token: 848d5570-c681-b27d-24b9-fcf1cec36e03
-Accept-Encoding: gzip, deflate, br
-Accept-Language: en-US,en;q=0.8
-
-null
-
-Sep 24, 2017 6:53:21 PM server.ServerLog print
-INFO: Response:
-HTTP/1.1 401 Unauthorized
-Server: Gayatri Aishwarya Web Server 1.0
-Content-Length: 33
-Date: 2017/09/24 18:53:21
-Content-Type: null
-
-<h1>401</h1><h2>Unauthorized</h2>
-
-Sep 24, 2017 6:53:33 PM server.ServerLog print
+Sep 25, 2017 3:29:56 AM server.ServerLog print
 INFO: Connected to client 2
 
-Sep 24, 2017 6:53:33 PM server.ServerLog print
-INFO: Request:
-GET / HTTP/1.1
-Authorization: Basic anJvYjpwYXNzd29yZA==
-Cache-Control: no-cache
-Accept: */*
-Connection: keep-alive
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-Host: localhost:8096
-Postman-Token: ed04b532-7c23-efa6-207f-2a501641fd3a
-Accept-Encoding: gzip, deflate, br
-Accept-Language: en-US,en;q=0.8
-
-null
-
-Sep 24, 2017 6:55:00 PM server.ServerLog print
-INFO: Response:
-HTTP/1.1 201 Created
-Server: Gayatri Aishwarya Web Server 1.0
-Content-Length: 28
-Date: 2017/09/24 18:55:00
-Content-Type: null
-
-<h1>201</h1><h2>Created</h2>
-
-Sep 24, 2017 6:56:07 PM server.ServerLog print
+Sep 25, 2017 3:29:56 AM server.ServerLog print
 INFO: Connected to client 3
 
-Sep 24, 2017 6:56:07 PM server.ServerLog print
+Sep 25, 2017 3:29:56 AM server.ServerLog print
 INFO: Request:
 GET / HTTP/1.1
-Authorization: Basic anJvYjpwYXNzd29yZA==
-Cache-Control: no-cache
-Accept: */*
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
 Connection: keep-alive
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
 Host: localhost:8096
-Postman-Token: 4ac5261c-330a-fd2c-f914-cc39d6c813f6
 Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.8
 
 null
 
-Sep 24, 2017 6:56:31 PM server.ServerLog print
-INFO: Response:
-HTTP/1.1 201 Created
-Server: Gayatri Aishwarya Web Server 1.0
-Content-Length: 28
-Date: 2017/09/24 18:56:31
-Content-Type: null
+Sep 25, 2017 3:29:56 AM server.ServerLog print
+INFO: Request:
+GET /js/image-test.js HTTP/1.1
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
 
-<h1>201</h1><h2>Created</h2>
+null
 
-Sep 24, 2017 6:56:52 PM server.ServerLog print
+Sep 25, 2017 3:29:56 AM server.ServerLog print
+INFO: Request:
+GET /images/sushi.jpg HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:29:57 AM server.ServerLog print
 INFO: Connected to client 4
 
-Sep 24, 2017 6:56:52 PM server.ServerLog print
+Sep 25, 2017 3:29:57 AM server.ServerLog print
 INFO: Request:
-GET / HTTP/1.1
-Cache-Control: no-cache
-Accept: */*
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
 Connection: keep-alive
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
 Host: localhost:8096
-Postman-Token: 4b613725-e008-0622-f3b8-5196d32a354b
 Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.8
 
 null
 
-Sep 24, 2017 6:57:03 PM server.ServerLog print
-INFO: Response:
-HTTP/1.1 401 Unauthorized
-Server: Gayatri Aishwarya Web Server 1.0
-Content-Length: 33
-Date: 2017/09/24 18:57:03
-Content-Type: null
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 5
 
-<h1>401</h1><h2>Unauthorized</h2>
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 6
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 7
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/1.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 8
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/2.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/4.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 9
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/3.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/5.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 10
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/6.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 11
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/7.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 12
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 13
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 14
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Connected to client 15
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/8.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/9.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /test/10.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:02 AM server.ServerLog print
+INFO: Request:
+GET /images/really-big-image.png HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:10 AM server.ServerLog print
+INFO: Connected to client 16
+
+Sep 25, 2017 3:30:10 AM server.ServerLog print
+INFO: Request:
+GET /protected/ HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Connected to client 17
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Request:
+GET /js/image-test.js HTTP/1.1
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Connected to client 18
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Request:
+GET /protected/images/sushi.jpg HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Response:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 23
+Date: 2017/09/25 03:30:11
+Content-Type: text/html
+
+<h1>200</h1><h2>OK</h2>
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Connected to client 19
+
+Sep 25, 2017 3:30:11 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 20
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /images/really-big-image.png HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 21
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 22
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/1.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 23
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/2.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 24
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/3.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/4.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 25
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 26
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/5.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 27
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 28
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 29
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/7.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/8.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Connected to client 30
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/9.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/10.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:14 AM server.ServerLog print
+INFO: Request:
+GET /test/6.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/protected/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 31
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 32
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 33
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 34
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 35
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Connected to client 36
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Request:
+GET / HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Request:
+GET /js/image-test.js HTTP/1.1
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Request:
+GET /images/sushi.jpg HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:22 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:43 AM server.ServerLog print
+INFO: Connected to client 37
+
+Sep 25, 2017 3:30:43 AM server.ServerLog print
+INFO: Request:
+GET /cgi-bin/perl_env HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:43 AM server.ServerLog print
+INFO: Connected to client 38
+
+Sep 25, 2017 3:30:43 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/cgi-bin/perl_env
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 39
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 40
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 41
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 42
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 43
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Connected to client 44
+
+Sep 25, 2017 3:30:50 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:52 AM server.ServerLog print
+INFO: Request:
+GET /cgi-bin/basic_args.sh HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:52 AM server.ServerLog print
+INFO: Response:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 23
+Date: 2017/09/25 03:30:52
+Content-Type: text/html
+
+<h1>200</h1><h2>OK</h2>
+
+Sep 25, 2017 3:30:52 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/cgi-bin/basic_args.sh
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:30:56 AM server.ServerLog print
+INFO: Connected to client 45
+
+Sep 25, 2017 3:30:56 AM server.ServerLog print
+INFO: Connected to client 46
+
+Sep 25, 2017 3:30:56 AM server.ServerLog print
+INFO: Request:
+GET /favicon.ico HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 47
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 48
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/1.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/2.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 49
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 50
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 51
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/4.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/3.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 52
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/5.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/6.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 53
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 54
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/7.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/8.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 55
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/9.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 56
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Connected to client 57
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /test/10.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 25, 2017 3:32:46 AM server.ServerLog print
+INFO: Request:
+GET /images/really-big-image.png HTTP/1.1
+Accept: image/webp,image/apng,image/*,*/*;q=0.8
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Referer: http://localhost:8096/
+Host: localhost:8096
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
 

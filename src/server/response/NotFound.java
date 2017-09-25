@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class NotFound extends Response {
 
-	public NotFound(Request request) {
-		super(request);
+	public NotFound(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

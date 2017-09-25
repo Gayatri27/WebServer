@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class Unauthorized extends Response {
 
-	public Unauthorized(Request request) {
-		super(request);
+	public Unauthorized(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class NotModified extends Response {
 
-	public NotModified(Request request) {
-		super(request);
+	public NotModified(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

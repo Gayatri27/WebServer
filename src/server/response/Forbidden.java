@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class Forbidden extends Response {
 
-	public Forbidden(Request request) {
-		super(request);
+	public Forbidden(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

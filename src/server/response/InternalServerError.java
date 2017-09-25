@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class InternalServerError extends Response {
 
-	public InternalServerError(Request request) {
-		super(request);
+	public InternalServerError(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override

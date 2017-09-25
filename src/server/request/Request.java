@@ -62,6 +62,9 @@ public class Request {
 	}
 
 	private void parseVerbUriAndVersion(String input) {
+		if(input == null)
+			return;
+		
 		String[] content = input.split(" ");
 		if (content.length == 3) {
 			verb = content[0].trim();
@@ -115,5 +118,9 @@ public class Request {
 	public String printRequest() {
 		printHeader = Utils.getHeaderString(headers);
 		return printStatusLine + "\n" + printHeader + printBody;
+	}
+	
+	public String getHttpVersion() {
+		return httpVersion;
 	}
 }

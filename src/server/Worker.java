@@ -3,6 +3,7 @@ package server;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.HashMap;
@@ -34,24 +35,35 @@ public class Worker extends Thread {
 	public void run() {
 		PrintWriter out = null;
 		BufferedReader in = null;
+		OutputStream outputStream = null;
 
 		try {
-			out = new PrintWriter(client.getOutputStream(), true);
+			outputStream = client.getOutputStream();
+			out = new PrintWriter(outputStream, true);
 			in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			Request request = new Request(in);
-			ServerLog.print("Request:\n" + request.printRequest());
+			ServerLog.print("Request from " + clientId + ":\n" + request.printRequest());
 			Resource resource = new Resource(request.getUri(), config);
 			ResponseFactory responseFactory = new ResponseFactory();
 			Response response = responseFactory.getResponse(request, resource);
-			String responseStr = response.writeString();
-			ServerLog.print("Response:\n" + responseStr);
-			out.print(responseStr);
-			out.flush();
+			if(response.isFile()) {
+				String headers = response.getStatusLine() + response.getHeaders();
+				outputStream.write(headers.getBytes());
+				outputStream.write(response.getData());
+				outputStream.flush();
+				ServerLog.print("Response from " + clientId + ":\n" + headers);
+			} else {
+				String responseStr = response.writeString();
+				ServerLog.print("Response from " + clientId + ":\n" + responseStr);
+				out.print(responseStr);
+				out.flush();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				out.close();
+				outputStream.close();
 				in.close();
 				client.close();
 			} catch (IOException e) {

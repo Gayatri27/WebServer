@@ -1,13 +1,14 @@
 package server.response;
 
 import server.Constants;
+import server.Resource;
 import server.Utils;
 import server.request.Request;
 
 public class Created extends Response {
 
-	public Created(Request request) {
-		super(request);
+	public Created(Request request, Resource resource) {
+		super(request, resource);
 	}
 
 	@Override
