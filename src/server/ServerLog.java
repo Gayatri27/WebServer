@@ -14,9 +14,10 @@ public class ServerLog {
 	public void init(String fileName) {
 		try {
 			File f = new File(fileName);
-			if (!f.exists())
+			if (!f.exists()) {
+				f.mkdirs();
 				f.createNewFile();
-			else {
+			} else {
 				f.delete();
 				f.createNewFile();
 			}

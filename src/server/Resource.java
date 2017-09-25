@@ -52,7 +52,8 @@ public class Resource {
 
 	private String appendDirIndex(String path) {
 		String content[] = path.split("/");
-		content[content.length - 1] = Constants.DEFAULT_INDEX_FILE;
+		String indexFile = httpdConf.getDirectoryIndex();
+		content[content.length - 1] = indexFile == null ? Constants.DEFAULT_INDEX_FILE : indexFile;
 		StringBuilder builder = new StringBuilder();
 		for (String str : content) {
 			if (builder.length() > 0)

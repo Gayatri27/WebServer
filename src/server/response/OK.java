@@ -8,7 +8,6 @@ public class OK extends Response {
 
 	public OK(Request request) {
 		super(request);
-
 	}
 
 	@Override

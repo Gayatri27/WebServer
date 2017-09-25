@@ -37,7 +37,7 @@ public class WebServer {
 		ServerLog serverLog = new ServerLog();
 		serverLog.init(configuration.getLogFilePath());
 		
-		ServerLog.print("Server initialzed successfully");
+		ServerLog.print("Server initialized successfully");
 		ServerLog.print("Starting server on port " + configuration.getPort());
 
 		try {

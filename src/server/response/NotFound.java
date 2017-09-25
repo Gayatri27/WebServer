@@ -8,7 +8,6 @@ public class NotFound extends Response {
 
 	public NotFound(Request request) {
 		super(request);
-
 	}
 
 	@Override
