@@ -15,6 +15,7 @@ public class HttpdConf {
 	int port = -1;
 	String logFile = null;
 	String accessFileName = null;
+	String directoryIndex = null;
 
 	String file = null;
 
@@ -65,6 +66,9 @@ public class HttpdConf {
 		case Constants.ACCESS_FILE_NAME:
 			accessFileName = value1;
 			break;
+		case Constants.DIRECTORY_INDEX:
+			directoryIndex = value1;
+			break;
 		default:
 			System.out.println("Invalid");
 			break;
@@ -93,5 +97,13 @@ public class HttpdConf {
 	
 	public String getLogFilePath() {
 		return logFile;
+	}
+	
+	public String getAccessFileName() {
+		return accessFileName;
+	}
+	
+	public String getDirectoryIndex() {
+		return directoryIndex;
 	}
 }

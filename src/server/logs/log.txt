@@ -1,35 +1,116 @@
-Sep 24, 2017 4:06:34 AM server.ServerLog print
-INFO: Server initialzed successfully
+Sep 24, 2017 6:52:38 PM server.ServerLog print
+INFO: Server initialized successfully
 
-Sep 24, 2017 4:06:34 AM server.ServerLog print
+Sep 24, 2017 6:52:38 PM server.ServerLog print
 INFO: Starting server on port 8096
 
-Sep 24, 2017 4:06:37 AM server.ServerLog print
+Sep 24, 2017 6:52:49 PM server.ServerLog print
 INFO: Connected to client 1
 
-Sep 24, 2017 4:06:37 AM server.ServerLog print
+Sep 24, 2017 6:52:49 PM server.ServerLog print
 INFO: Request:
-POST / HTTP/1.1
-Origin: chrome-extension://aejoelaoggembcahagimdiliamlcdmfm
-Authorization: Basic YWJjOjEyMzQ=
+GET / HTTP/1.1
+Cache-Control: no-cache
 Accept: */*
 Connection: keep-alive
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
 Host: localhost:8096
+Postman-Token: 848d5570-c681-b27d-24b9-fcf1cec36e03
 Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.8
-Content-Length: 9
-Content-Type: application/json
 
-name=Andy
+null
 
-Sep 24, 2017 4:06:37 AM server.ServerLog print
+Sep 24, 2017 6:53:21 PM server.ServerLog print
 INFO: Response:
-HTTP/1.1 200 OK
+HTTP/1.1 401 Unauthorized
 Server: Gayatri Aishwarya Web Server 1.0
-Content-Length: 23
-Date: 2017/09/24 04:06:37
-Content-Type: application/json
+Content-Length: 33
+Date: 2017/09/24 18:53:21
+Content-Type: null
 
-<h1>200</h1><h2>OK</h2>
+<h1>401</h1><h2>Unauthorized</h2>
+
+Sep 24, 2017 6:53:33 PM server.ServerLog print
+INFO: Connected to client 2
+
+Sep 24, 2017 6:53:33 PM server.ServerLog print
+INFO: Request:
+GET / HTTP/1.1
+Authorization: Basic anJvYjpwYXNzd29yZA==
+Cache-Control: no-cache
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Host: localhost:8096
+Postman-Token: ed04b532-7c23-efa6-207f-2a501641fd3a
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 24, 2017 6:55:00 PM server.ServerLog print
+INFO: Response:
+HTTP/1.1 201 Created
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 28
+Date: 2017/09/24 18:55:00
+Content-Type: null
+
+<h1>201</h1><h2>Created</h2>
+
+Sep 24, 2017 6:56:07 PM server.ServerLog print
+INFO: Connected to client 3
+
+Sep 24, 2017 6:56:07 PM server.ServerLog print
+INFO: Request:
+GET / HTTP/1.1
+Authorization: Basic anJvYjpwYXNzd29yZA==
+Cache-Control: no-cache
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Host: localhost:8096
+Postman-Token: 4ac5261c-330a-fd2c-f914-cc39d6c813f6
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 24, 2017 6:56:31 PM server.ServerLog print
+INFO: Response:
+HTTP/1.1 201 Created
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 28
+Date: 2017/09/24 18:56:31
+Content-Type: null
+
+<h1>201</h1><h2>Created</h2>
+
+Sep 24, 2017 6:56:52 PM server.ServerLog print
+INFO: Connected to client 4
+
+Sep 24, 2017 6:56:52 PM server.ServerLog print
+INFO: Request:
+GET / HTTP/1.1
+Cache-Control: no-cache
+Accept: */*
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Host: localhost:8096
+Postman-Token: 4b613725-e008-0622-f3b8-5196d32a354b
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+null
+
+Sep 24, 2017 6:57:03 PM server.ServerLog print
+INFO: Response:
+HTTP/1.1 401 Unauthorized
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 33
+Date: 2017/09/24 18:57:03
+Content-Type: null
+
+<h1>401</h1><h2>Unauthorized</h2>
 

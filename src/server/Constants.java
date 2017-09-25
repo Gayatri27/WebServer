@@ -17,6 +17,7 @@ public class Constants {
 	public static final String SCRIPT_ALIAS_TAG = "ScriptAlias";
 	public static final String ALIAS_TAG = "Alias";
 	public static final String ACCESS_FILE_NAME = "AccessFileName";
+	public static final String DIRECTORY_INDEX = "DirectoryIndex";
 
 	// _.htaccess tags
 	public static final String AUTH_USER_FILE_TAG = "AuthUserFile";
@@ -35,6 +36,7 @@ public class Constants {
 	public static final String SERVER = "Server";
 	public static final String SERVER_NAME = "Gayatri Aishwarya Web Server 1.0";
 	public static final String HTML_MIME_TYPE = "text/html";
+	public static final String LAST_MODIFIED = "Last-Modified";
 
 	// resource constants
 	public static final String DEFAULT_INDEX_FILE = "index.html";

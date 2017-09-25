@@ -51,8 +51,7 @@ public class ResponseFactory {
 
 	private boolean userAuthenticated(Request request) {
 		Htpassword htpassword = new Htpassword();
-		// return htpassword.isAuthorized(request.getAuthInfo());
-		return true;
+		return htpassword.isAuthorized(request.getAuthInfo());
 	}
 
 	private boolean scriptAliased(Resource resource) {

@@ -8,7 +8,6 @@ public class NotModified extends Response {
 
 	public NotModified(Request request) {
 		super(request);
-
 	}
 
 	@Override

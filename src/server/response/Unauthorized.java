@@ -8,7 +8,6 @@ public class Unauthorized extends Response {
 
 	public Unauthorized(Request request) {
 		super(request);
-
 	}
 
 	@Override

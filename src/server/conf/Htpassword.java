@@ -35,7 +35,8 @@ public class Htpassword {
 
 	public boolean isAuthorized(String username, String password) {
 		if (users.containsKey(username)) {
-			return users.get(username).equals(encryptPassword(password));
+			String pass = encryptPassword(password);
+			return users.get(username).equals(pass);
 		}
 		return false;
 	}

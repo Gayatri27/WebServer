@@ -38,6 +38,7 @@ public class Request {
 				line = in.readLine();
 				parseHeader(line);
 			}
+			contentType = headers.get(Constants.CONTENT_TYPE);
 
 			// parseBody
 			if (headers.containsKey(Constants.CONTENT_LENGTH)) {
@@ -81,7 +82,6 @@ public class Request {
 			} else
 				headers.put(content[0].trim(), content[1].trim());
 		}
-		contentType = headers.get(Constants.CONTENT_TYPE);
 	}
 
 	public String getUri() {
