@@ -35,7 +35,7 @@ public class Htaccess {
 			else {
 				StringBuffer sb = new StringBuffer();
 				for(int i = 1; i < content.length; i++)
-					sb.append(content[i]);
+					sb.append(content[i] + " ");
 				value = sb.toString();
 			}
 			value = value.replace("\"", "").trim();

@@ -28,13 +28,18 @@ public class Request {
 		String line;
 		try {
 			line = in.readLine();
+			if(line == null) {
+				isValid = false;
+				return;
+			}
+			
 			parseVerbUriAndVersion(line);
 
 			isValid = isRequestValid(line);
 			if (!isValid)
 				return;
-
-			while (!line.isEmpty()) {
+			
+			while (line != null && !line.isEmpty()) {
 				line = in.readLine();
 				parseHeader(line);
 			}
@@ -54,10 +59,12 @@ public class Request {
 	}
 
 	private boolean isRequestValid(String line) {
-		boolean isVersionValid = httpVersion.equals(Constants.HTTP_VERSION_1_0)
-				|| httpVersion.equals(Constants.HTTP_VERSION_1_1);
-		if (!isVersionValid || !Verb.isValid(verb))
-			return false;
+		if(line != null) {
+			boolean isVersionValid = httpVersion.equals(Constants.HTTP_VERSION_1_0)
+					|| httpVersion.equals(Constants.HTTP_VERSION_1_1);
+			if (!isVersionValid || !Verb.isValid(verb))
+				return false;
+		}
 		return true;
 	}
 

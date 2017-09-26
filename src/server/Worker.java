@@ -42,6 +42,8 @@ public class Worker extends Thread {
 			out = new PrintWriter(outputStream, true);
 			in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			Request request = new Request(in);
+			if(!request.isValid())
+				return;
 			ServerLog.print("Request from " + clientId + ":\n" + request.printRequest());
 			Resource resource = new Resource(request.getUri(), config);
 			ResponseFactory responseFactory = new ResponseFactory();

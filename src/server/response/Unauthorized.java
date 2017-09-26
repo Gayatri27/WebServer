@@ -8,7 +8,7 @@ import server.conf.Htaccess;
 import server.request.Request;
 
 public class Unauthorized extends Response {
-	
+
 	public Unauthorized(Request request, Resource resource) {
 		super(request, resource);
 	}
@@ -27,7 +27,7 @@ public class Unauthorized extends Response {
 	public String getHeaders() {
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
 		Htaccess htaccess = WebServer.getHtaccess();
-		headers.put(Constants.WWW_AUTHENTICATE, htaccess.getAuthType() + ":" + htaccess.getAuthName());
+		headers.put(Constants.WWW_AUTHENTICATE, htaccess.getAuthType() + " realm=\"" + htaccess.getAuthName() + "\"");
 		return Utils.getHeaderString(headers);
 	}
 
