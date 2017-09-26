@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 
 import server.Constants;
 import server.Resource;
@@ -30,7 +29,7 @@ public class OK extends Response {
 	public void setFile(boolean value) {
 		isFile = value;
 	}
-	
+
 	public void setScript(boolean value) {
 		isScript = value;
 	}
@@ -38,7 +37,7 @@ public class OK extends Response {
 	public void setFilePath(String path) {
 		filePath = path;
 	}
-	
+
 	public void setScriptString(String value) {
 		scriptString = value;
 	}
@@ -55,7 +54,7 @@ public class OK extends Response {
 
 	@Override
 	public String getHeaders() {
-		if(isFile) {
+		if (isFile) {
 			File file = new File(filePath);
 			String timeStamp = Utils.getDate(file.lastModified());
 			headers.put(Constants.LAST_MODIFIED, timeStamp);
@@ -68,7 +67,7 @@ public class OK extends Response {
 	public String getBody() {
 		if (isFile)
 			return Utils.readFile(filePath);
-		else if(isScript)
+		else if (isScript)
 			return scriptString;
 		else
 			return "<h1>200</h1><h2>OK</h2>";

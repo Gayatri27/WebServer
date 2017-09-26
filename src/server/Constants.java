@@ -38,6 +38,9 @@ public class Constants {
 	public static final String HTML_MIME_TYPE = "text/html";
 	public static final String LAST_MODIFIED = "Last-Modified";
 	public static final String WWW_AUTHENTICATE = "WWW-Authenticate";
+	public static final String CACHE_CONTROL = "Cache-Control";
+	public static final String NO_CACHE = "no-cache";
+	public static final String PRAGMA = "Pragma";
 	public static final String SIMPLE_DATE_FORMAT = "yyyy/MM/dd HH:mm:ss";
 
 	// resource constants

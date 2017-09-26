@@ -28,6 +28,8 @@ public class Unauthorized extends Response {
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
 		Htaccess htaccess = WebServer.getHtaccess();
 		headers.put(Constants.WWW_AUTHENTICATE, htaccess.getAuthType() + " realm=\"" + htaccess.getAuthName() + "\"");
+		headers.put(Constants.CACHE_CONTROL, Constants.NO_CACHE);
+		headers.put(Constants.PRAGMA, Constants.NO_CACHE);
 		return Utils.getHeaderString(headers);
 	}
 
