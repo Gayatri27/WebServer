@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 import server.Constants;
 import server.Resource;
+import server.Utils;
 import server.request.Request;
 
 public class ResponseHelper {
@@ -54,7 +55,13 @@ public class ResponseHelper {
 	}
 	
 	public static boolean needsUpdate(Request request, Resource resource) {
-		return request.containsIsModified();
+		if(request.containsIsModified()) {
+			File file = new File(resource.getAbsolutePath(false));
+			long fileTime = Utils.getTimeMilliseconds(Utils.getDate(file.lastModified()));
+			long headerTime = Utils.getTimeMilliseconds(request.getLastModified());
+			return fileTime != headerTime;
+		}
+		return true;
 	}
 }
  

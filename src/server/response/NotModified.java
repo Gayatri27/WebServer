@@ -7,8 +7,11 @@ import server.request.Request;
 
 public class NotModified extends Response {
 
+	Request request;
+	
 	public NotModified(Request request, Resource resource) {
 		super(request, resource);
+		this.request = request;
 	}
 
 	@Override
@@ -23,6 +26,7 @@ public class NotModified extends Response {
 
 	@Override
 	public String getHeaders() {
+		headers.put(Constants.LAST_MODIFIED, request.getLastModified());
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
 		return Utils.getHeaderString(headers);
 	}

@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -53,6 +54,18 @@ public class Utils {
 	public static String getDate(long time) {
 		DateFormat dateFormat = new SimpleDateFormat(Constants.SIMPLE_DATE_FORMAT);
 		return dateFormat.format(time);
+	}
+	
+	public static long getTimeMilliseconds(String date) {
+		SimpleDateFormat sdf = new SimpleDateFormat(Constants.SIMPLE_DATE_FORMAT);
+		Date d;
+		try {
+			d = sdf.parse(date);
+			return d.getTime();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 	
 	public static String getHeaderString(Map<String, String> headers) {

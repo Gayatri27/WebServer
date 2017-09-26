@@ -115,7 +115,7 @@ public class Request {
 	}
 
 	public boolean containsIsModified() {
-		return !headers.containsKey(Constants.IF_MODIFIED_SINCE);
+		return headers.containsKey(Constants.IF_MODIFIED_SINCE);
 	}
 	
 	public String getContentType() {
@@ -129,5 +129,9 @@ public class Request {
 	
 	public String getHttpVersion() {
 		return httpVersion;
+	}
+	
+	public String getLastModified() {
+		return headers.get(Constants.IF_MODIFIED_SINCE);
 	}
 }
