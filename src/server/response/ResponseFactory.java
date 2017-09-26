@@ -97,7 +97,7 @@ public class ResponseFactory {
 	}
 
 	private Response handleGet(Request request, Resource resource) {
-		if (request.isModified())
+		if(ResponseHelper.needsUpdate(request, resource))
 			return handlePost(request, resource);
 		return new NotModified(request, resource);
 	}

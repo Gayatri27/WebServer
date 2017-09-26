@@ -52,5 +52,9 @@ public class ResponseHelper {
 			return null;
 		}
 	}
+	
+	public static boolean needsUpdate(Request request, Resource resource) {
+		return request.containsIsModified();
+	}
 }
  

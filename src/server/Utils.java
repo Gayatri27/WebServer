@@ -45,9 +45,14 @@ public class Utils {
 	}
 	
 	public static String getDate() {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		DateFormat dateFormat = new SimpleDateFormat(Constants.SIMPLE_DATE_FORMAT);
 		Date date = new Date();
 		return dateFormat.format(date);
+	}
+	
+	public static String getDate(long time) {
+		DateFormat dateFormat = new SimpleDateFormat(Constants.SIMPLE_DATE_FORMAT);
+		return dateFormat.format(time);
 	}
 	
 	public static String getHeaderString(Map<String, String> headers) {

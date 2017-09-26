@@ -1,12 +1,11 @@
 package server.response;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 
 import server.Constants;
 import server.Resource;
@@ -56,6 +55,11 @@ public class OK extends Response {
 
 	@Override
 	public String getHeaders() {
+		if(isFile) {
+			File file = new File(filePath);
+			String timeStamp = Utils.getDate(file.lastModified());
+			headers.put(Constants.LAST_MODIFIED, timeStamp);
+		}
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
 		return Utils.getHeaderString(headers);
 	}

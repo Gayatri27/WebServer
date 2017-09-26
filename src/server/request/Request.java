@@ -114,7 +114,7 @@ public class Request {
 		return Verb.valueOf(verb);
 	}
 
-	public boolean isModified() {
+	public boolean containsIsModified() {
 		return !headers.containsKey(Constants.IF_MODIFIED_SINCE);
 	}
 	
