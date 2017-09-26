@@ -82,7 +82,7 @@ public class ResponseHelper {
 
 		MimeTypes mimes = WebServer.getMimes();
 		String mimeType = mimes.getMime(getUriExtension(request.getAbsolutePath()));
-		return mimeType != null ? mimeType : Constants.HTML_MIME_TYPE;
+		return mimeType != null ? mimeType : Constants.DEFAULT_MIME_TYPE;
 	}
 	
 	public static String getUriExtension(String uri) {

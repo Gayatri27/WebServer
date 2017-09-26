@@ -19,7 +19,7 @@ public class Worker extends Thread {
 	Socket client;
 	HttpdConf config;
 	MimeTypes mimes;
-	
+
 	int clientId;
 
 	public HashMap<String, String> default_headers = new HashMap<String, String>();
@@ -42,15 +42,15 @@ public class Worker extends Thread {
 			out = new PrintWriter(outputStream, true);
 			in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			Request request = new Request(in);
-			if(!request.isValid()) {
-				ServerLog.print("Ignoring client " + clientId + " request");
-				return;
+			Resource resource = null;
+			if (request.isValid()) {
+				ServerLog.print("Request from " + clientId + ":\n" + request.printRequest());
+				resource = new Resource(request.getUri(), config);
 			}
-			ServerLog.print("Request from " + clientId + ":\n" + request.printRequest());
-			Resource resource = new Resource(request.getUri(), config);
+
 			ResponseFactory responseFactory = new ResponseFactory();
 			Response response = responseFactory.getResponse(request, resource);
-			if(response.isFile()) {
+			if (response.isFile()) {
 				String headers = response.getStatusLine() + response.getHeaders();
 				outputStream.write(headers.getBytes());
 				outputStream.write(response.getData());

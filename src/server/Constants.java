@@ -35,7 +35,7 @@ public class Constants {
 	public static final String DATE = "Date";
 	public static final String SERVER = "Server";
 	public static final String SERVER_NAME = "Gayatri Aishwarya Web Server 1.0";
-	public static final String HTML_MIME_TYPE = "text/html";
+	public static final String DEFAULT_MIME_TYPE = "application/octet-stream";
 	public static final String LAST_MODIFIED = "Last-Modified";
 	public static final String WWW_AUTHENTICATE = "WWW-Authenticate";
 	public static final String CACHE_CONTROL = "Cache-Control";

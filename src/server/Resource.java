@@ -13,7 +13,7 @@ public class Resource {
 	public Resource(String uri, HttpdConf config) {
 		this.uri = uri;
 		this.httpdConf = config;
-		if(this.uri.length() == 1 && this.uri.equals("/"))
+		if (this.uri.length() == 1 && this.uri.equals("/"))
 			this.uri = Constants.DEFAULT_INDEX_FILE;
 	}
 
@@ -29,8 +29,8 @@ public class Resource {
 
 	private boolean isUriAliased() {
 		Map<String, String> aliases = httpdConf.getAliases();
-		for(String key: aliases.keySet()) {
-			if(uri.contains(key))
+		for (String key : aliases.keySet()) {
+			if (uri.contains(key))
 				return true;
 		}
 		return false;
@@ -38,8 +38,8 @@ public class Resource {
 
 	public boolean isUriScriptAliased() {
 		Map<String, String> scriptAliases = httpdConf.getScriptAliases();
-		for(String key: scriptAliases.keySet()) {
-			if(uri.contains(key))
+		for (String key : scriptAliases.keySet()) {
+			if (uri.contains(key))
 				return true;
 		}
 		return false;
@@ -55,6 +55,9 @@ public class Resource {
 		if(isScript)
 			return unmodifiedUri;
 		else {
+			File file = new File(unmodifiedUri);
+			if(file.exists())
+				return unmodifiedUri;
 			String documentRoot = httpdConf.getDocumentRoot();
 			if(unmodifiedUri.startsWith("/") & documentRoot.endsWith("/"))
 				return documentRoot + unmodifiedUri.substring(1, uri.length());
@@ -65,15 +68,15 @@ public class Resource {
 	private String getUnmodifiedUri() {
 		if (isUriAliased()) {
 			Map<String, String> aliases = httpdConf.getAliases();
-			for(String key: aliases.keySet()) {
-				if(uri.contains(key))
+			for (String key : aliases.keySet()) {
+				if (uri.contains(key))
 					return uri.replace(key, aliases.get(key));
 			}
 			return null;
 		} else if (isUriScriptAliased()) {
 			Map<String, String> scriptAliases = httpdConf.getScriptAliases();
-			for(String key: scriptAliases.keySet()) {
-				if(uri.contains(key))
+			for (String key : scriptAliases.keySet()) {
+				if (uri.contains(key))
 					return uri.replace(key, scriptAliases.get(key));
 			}
 			return null;

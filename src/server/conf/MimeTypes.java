@@ -23,7 +23,7 @@ public class MimeTypes {
 			else {
 				if (types == null)
 					types = new ArrayList<String>();
-				types.add(line);
+				// types.add(line);
 				String[] content = line.split("\\s+");
 				if (content.length == 1)
 					types.add(content[0].trim());

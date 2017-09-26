@@ -39,6 +39,7 @@ application/index.vnd
 application/iotp
 application/ipp
 application/isup
+application/json json
 application/mac-binhex40	hqx
 application/mac-compactpro	cpt
 application/macwriteii
@@ -589,4 +590,4 @@ video/vnd.vivo
 video/x-msvideo			avi
 video/x-sgi-movie		movie
 x-conference/x-cooltalk		ice
-
+application/json json
