@@ -22,7 +22,8 @@ public class Response implements IResponse {
 		
 		headers.put(Constants.DATE, Utils.getDate());
 		headers.put(Constants.SERVER, Constants.SERVER_NAME);
-		headers.put(Constants.CONTENT_TYPE, request.getContentType() != null ? request.getContentType() : Constants.HTML_MIME_TYPE);
+		headers.put(Constants.CONTENT_TYPE, ResponseHelper.getContentType(request));
+		// headers.put(Constants.CONTENT_TYPE, request.getContentType() != null ? request.getContentType() : Constants.HTML_MIME_TYPE);
 	}
 
 	public String writeString() {

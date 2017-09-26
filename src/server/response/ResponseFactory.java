@@ -1,6 +1,7 @@
 package server.response;
 
 import server.Resource;
+import server.WebServer;
 import server.conf.Htpassword;
 import server.request.Request;
 
@@ -49,7 +50,7 @@ public class ResponseFactory {
 
 	private boolean authenticationRequired(Request request, Resource resource) {
 		String accessFileName = resource.getHttpConf().getAccessFileName();
-		if(request.getUri().contains(accessFileName))
+		if (request.getUri().contains(accessFileName))
 			return true;
 		return false;
 	}
@@ -59,8 +60,7 @@ public class ResponseFactory {
 	}
 
 	private boolean userAuthenticated(Request request) {
-		Htpassword htpassword = new Htpassword();
-		return htpassword.isAuthorized(request.getAuthInfo());
+		return WebServer.getHtpassword().isAuthorized(request.getAuthInfo());
 	}
 
 	private boolean scriptAliased(Resource resource) {
@@ -97,7 +97,7 @@ public class ResponseFactory {
 	}
 
 	private Response handleGet(Request request, Resource resource) {
-		if(ResponseHelper.needsUpdate(request, resource))
+		if (ResponseHelper.needsUpdate(request, resource))
 			return handlePost(request, resource);
 		return new NotModified(request, resource);
 	}
@@ -115,13 +115,17 @@ public class ResponseFactory {
 	}
 
 	private Response handlePost(Request request, Resource resource) {
-		String path = resource.getAbsolutePath(false);
+		String path = request.getAbsolutePath();
+		if (path == null) {
+			path = resource.getAbsolutePath(false);
+			request.setAbsolutePath(path);
+		}
 		if (resource.isFile(path)) {
 			OK OK = new OK(request, resource);
 			OK.setFile(true);
 			OK.setFilePath(path);
 			return OK;
 		} else
-			return new OK(request, resource);
+			return new NotFound(request, resource);
 	}
 }

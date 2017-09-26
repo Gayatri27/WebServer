@@ -23,6 +23,8 @@ public class Request {
 	String printStatusLine;
 	String printHeader;
 	String printBody;
+	
+	String absolutePath;
 
 	public Request(BufferedReader in) {
 		String line;
@@ -133,5 +135,13 @@ public class Request {
 	
 	public String getLastModified() {
 		return headers.get(Constants.IF_MODIFIED_SINCE);
+	}
+	
+	public void setAbsolutePath(String value) {
+		absolutePath = value;
+	}
+	
+	public String getAbsolutePath() {
+		return absolutePath;
 	}
 }

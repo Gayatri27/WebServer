@@ -10,11 +10,12 @@ import server.conf.MimeTypes;
 
 public class WebServer {
 
-	HttpdConf configuration;
-	MimeTypes mimeTypes;
 	ServerSocket socket;
 	
+	static HttpdConf configuration;
 	static Htaccess htaccess;
+	static MimeTypes mimes;
+	static Htpassword htpassword;
 	
 	int clientId = 0;
 
@@ -27,13 +28,13 @@ public class WebServer {
 		configuration = new HttpdConf(Constants.HTTPD_CONF_FILE_LOCATION);
 		configuration.load();
 
-		mimeTypes = new MimeTypes(Constants.MIME_TYPES_FILE_LOCATION);
-		mimeTypes.load();
+		mimes = new MimeTypes(Constants.MIME_TYPES_FILE_LOCATION);
+		mimes.load();
 
 		htaccess = new Htaccess(configuration);
 		htaccess.load();
 
-		Htpassword htpassword = new Htpassword();
+		htpassword = new Htpassword();
 		htpassword.load(htaccess.getUserFile());
 		
 		ServerLog serverLog = new ServerLog();
@@ -49,7 +50,7 @@ public class WebServer {
 				client = socket.accept();
 				clientId++;
 				ServerLog.print("Connected to client " + clientId);
-				new Thread(new Worker(clientId, client, configuration, mimeTypes)).start();
+				new Thread(new Worker(clientId, client, configuration, mimes)).start();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -59,5 +60,13 @@ public class WebServer {
 	
 	public static Htaccess getHtaccess() {
 		return htaccess;
+	}
+	
+	public static Htpassword getHtpassword() {
+		return htpassword;
+	}
+	
+	public static MimeTypes getMimes() {
+		return mimes;
 	}
 }

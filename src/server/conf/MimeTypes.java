@@ -41,4 +41,17 @@ public class MimeTypes {
 			}
 		}
 	}
+	
+	public String getMime(String extension) {
+		if(extension == null)
+			return null;
+		
+		for(String mimeType: types) {
+			if(mimeType.contains(extension)) {
+				if(mimeType.contains("text") || mimeType.contains("image"))
+					return mimeType;
+			}
+		}
+		return null;
+	}
 }
