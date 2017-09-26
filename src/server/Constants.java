@@ -37,8 +37,10 @@ public class Constants {
 	public static final String SERVER_NAME = "Gayatri Aishwarya Web Server 1.0";
 	public static final String HTML_MIME_TYPE = "text/html";
 	public static final String LAST_MODIFIED = "Last-Modified";
+	public static final String WWW_AUTHENTICATE = "WWW-Authenticate";
 
 	// resource constants
 	public static final String DEFAULT_INDEX_FILE = "index.html";
 	public static final String LOGGER_NAME = "gayatri-aishwarya-web-server";
+	public static final String TEST_FILE_PATH = "src/server/output/test.file";
 }

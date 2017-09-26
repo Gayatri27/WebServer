@@ -14,6 +14,8 @@ public class WebServer {
 	MimeTypes mimeTypes;
 	ServerSocket socket;
 	
+	static Htaccess htaccess;
+	
 	int clientId = 0;
 
 	public static void main(String[] args) {
@@ -28,7 +30,7 @@ public class WebServer {
 		mimeTypes = new MimeTypes(Constants.MIME_TYPES_FILE_LOCATION);
 		mimeTypes.load();
 
-		Htaccess htaccess = new Htaccess(configuration);
+		htaccess = new Htaccess(configuration);
 		htaccess.load();
 
 		Htpassword htpassword = new Htpassword();
@@ -53,5 +55,9 @@ public class WebServer {
 			e.printStackTrace();
 			ServerLog.print("Server error " + e.getMessage());
 		}
+	}
+	
+	public static Htaccess getHtaccess() {
+		return htaccess;
 	}
 }

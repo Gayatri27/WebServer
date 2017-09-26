@@ -1,6 +1,7 @@
 package server;
 
 import java.io.File;
+import java.util.Map;
 
 import server.conf.HttpdConf;
 
@@ -12,14 +13,12 @@ public class Resource {
 	public Resource(String uri, HttpdConf config) {
 		this.uri = uri;
 		this.httpdConf = config;
-		if(this.uri.length() == 1 && this.uri.equals("/")) {
-			String accessFileName = httpdConf.getAccessFileName();
-			this.uri = accessFileName == null ? Constants.DEFAULT_INDEX_FILE : accessFileName;
-		}
+		if(this.uri.length() == 1 && this.uri.equals("/"))
+			this.uri = Constants.DEFAULT_INDEX_FILE;
 	}
 
-	public String getAbsolutePath() {
-		String absolutePath = resolveUriPath();
+	public String getAbsolutePath(boolean isScript) {
+		String absolutePath = resolveUriPath(isScript);
 		return isFile(absolutePath) ? absolutePath : appendDirIndex(absolutePath);
 	}
 
@@ -29,11 +28,21 @@ public class Resource {
 	}
 
 	private boolean isUriAliased() {
-		return httpdConf.getAliases().containsKey(uri) ? true : false;
+		Map<String, String> aliases = httpdConf.getAliases();
+		for(String key: aliases.keySet()) {
+			if(uri.contains(key))
+				return true;
+		}
+		return false;
 	}
 
 	public boolean isUriScriptAliased() {
-		return httpdConf.getScriptAliases().containsKey(uri) ? true : false;
+		Map<String, String> scriptAliases = httpdConf.getScriptAliases();
+		for(String key: scriptAliases.keySet()) {
+			if(uri.contains(key))
+				return true;
+		}
+		return false;
 	}
 
 	public boolean isFile(String path) {
@@ -41,19 +50,33 @@ public class Resource {
 		return file.isFile() ? true : false;
 	}
 
-	private String resolveUriPath() {
+	private String resolveUriPath(boolean isScript) {
 		String unmodifiedUri = getUnmodifiedUri();
-		String documentRoot = httpdConf.getDocumentRoot();
-		if(unmodifiedUri.startsWith("/") & documentRoot.endsWith("/"))
-			return documentRoot + unmodifiedUri.substring(1, uri.length());
-		return documentRoot + unmodifiedUri;
+		if(isScript)
+			return unmodifiedUri;
+		else {
+			String documentRoot = httpdConf.getDocumentRoot();
+			if(unmodifiedUri.startsWith("/") & documentRoot.endsWith("/"))
+				return documentRoot + unmodifiedUri.substring(1, uri.length());
+			return documentRoot + unmodifiedUri;
+		}
 	}
 
 	private String getUnmodifiedUri() {
 		if (isUriAliased()) {
-			return httpdConf.getAliases().get(uri);
+			Map<String, String> aliases = httpdConf.getAliases();
+			for(String key: aliases.keySet()) {
+				if(uri.contains(key))
+					return uri.replace(key, aliases.get(key));
+			}
+			return null;
 		} else if (isUriScriptAliased()) {
-			return httpdConf.getScriptAliases().get(uri);
+			Map<String, String> scriptAliases = httpdConf.getScriptAliases();
+			for(String key: scriptAliases.keySet()) {
+				if(uri.contains(key))
+					return uri.replace(key, scriptAliases.get(key));
+			}
+			return null;
 		}
 		return uri;
 	}

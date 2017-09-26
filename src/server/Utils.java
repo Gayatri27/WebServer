@@ -1,6 +1,7 @@
 package server;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,6 +13,10 @@ import java.util.Map;
 public class Utils {
 
 	public static String readFile(String fileLocation) {
+		File file = new File(fileLocation);
+		if(!file.exists())
+			return null;
+		
 		String returnStr = null;
 		BufferedReader br = null;
 		try {

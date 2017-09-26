@@ -3,10 +3,12 @@ package server.response;
 import server.Constants;
 import server.Resource;
 import server.Utils;
+import server.WebServer;
+import server.conf.Htaccess;
 import server.request.Request;
 
 public class Unauthorized extends Response {
-
+	
 	public Unauthorized(Request request, Resource resource) {
 		super(request, resource);
 	}
@@ -24,6 +26,8 @@ public class Unauthorized extends Response {
 	@Override
 	public String getHeaders() {
 		headers.put(Constants.CONTENT_LENGTH, String.valueOf(getBody().length()));
+		Htaccess htaccess = WebServer.getHtaccess();
+		headers.put(Constants.WWW_AUTHENTICATE, htaccess.getAuthType() + ":" + htaccess.getAuthName());
 		return Utils.getHeaderString(headers);
 	}
 

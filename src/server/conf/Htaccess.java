@@ -7,10 +7,10 @@ public class Htaccess {
 
 	HttpdConf configuration;
 
-	String userFile;
-	String authType;
-	String authName;
-	String require;
+	static String userFile;
+	static String authType;
+	static String authName;
+	static String require;
 
 	boolean isAvailable = true;
 
@@ -19,9 +19,7 @@ public class Htaccess {
 	}
 
 	public void load() {
-		String fileLocation = configuration.accessFileName == null ? Constants.HTACCESS_FILE_LOCATION
-				: configuration.getDocumentRoot() + Constants.CONFIG_FILES_LOCATION + configuration.accessFileName;
-		String file = Utils.readFile(fileLocation);
+		String file = Utils.readFile(Constants.HTACCESS_FILE_LOCATION);
 
 		if (file == null) {
 			isAvailable = false;
@@ -31,7 +29,15 @@ public class Htaccess {
 		String[] lines = file.split("\\r?\\n");
 		for (String line : lines) {
 			String[] content = line.split(" ");
-			String value = content[1];
+			String value;
+			if (content.length == 2)
+				value = content[1];
+			else {
+				StringBuffer sb = new StringBuffer();
+				for(int i = 1; i < content.length; i++)
+					sb.append(content[i]);
+				value = sb.toString();
+			}
 			value = value.replace("\"", "").trim();
 			setValues(content[0], value);
 		}
@@ -67,5 +73,13 @@ public class Htaccess {
 
 	public boolean isAvailable() {
 		return isAvailable;
+	}
+
+	public String getAuthType() {
+		return authType;
+	}
+
+	public String getAuthName() {
+		return authName;
 	}
 }

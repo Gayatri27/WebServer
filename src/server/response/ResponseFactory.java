@@ -1,7 +1,5 @@
 package server.response;
 
-import java.io.File;
-
 import server.Resource;
 import server.conf.Htpassword;
 import server.request.Request;
@@ -23,11 +21,13 @@ public class ResponseFactory {
 			if (!serverAuthenticationAvailable(resource))
 				return new NotFound(request, resource);
 
-//			if (!authHeaderAvailable(request))
-//				return new Unauthorized(request, resource);
+			if (authenticationRequired(request, resource)) {
+				if (!authHeaderAvailable(request))
+					return new Unauthorized(request, resource);
 
-//			if (!userAuthenticated(request))
-//				return new Forbidden(request, resource);
+				else if (!userAuthenticated(request))
+					return new Forbidden(request, resource);
+			}
 
 			if (!scriptAliased(resource))
 				return handleVerbResponses(request, resource);
@@ -45,6 +45,13 @@ public class ResponseFactory {
 
 	private boolean serverAuthenticationAvailable(Resource resource) {
 		return resource.isProtected();
+	}
+
+	private boolean authenticationRequired(Request request, Resource resource) {
+		String accessFileName = resource.getHttpConf().getAccessFileName();
+		if(request.getUri().contains(accessFileName))
+			return true;
+		return false;
 	}
 
 	private boolean authHeaderAvailable(Request request) {
@@ -78,9 +85,15 @@ public class ResponseFactory {
 	}
 
 	private Response processScript(Request request, Resource resource) {
-		if (ResponseHelper.executeScript(request, resource))
-			return new OK(request, resource);
-		return new InternalServerError(request, resource);
+		String response = ResponseHelper.executeScript(request, resource);
+		if (response == null)
+			return new InternalServerError(request, resource);
+		else {
+			OK OK = new OK(request, resource);
+			OK.setScript(true);
+			OK.setScriptString(response);
+			return OK;
+		}
 	}
 
 	private Response handleGet(Request request, Resource resource) {
@@ -90,20 +103,20 @@ public class ResponseFactory {
 	}
 
 	private Response handlePut(Request request, Resource resource) {
-		if (ResponseHelper.createFile(request, resource))
+		if (ResponseHelper.createFile())
 			return new Created(request, resource);
 		return new InternalServerError(request, resource);
 	}
 
 	private Response handleDelete(Request request, Resource resource) {
-		if (ResponseHelper.deleteFile(request, resource))
+		if (ResponseHelper.deleteFile())
 			return new NoContent(request, resource);
 		return new InternalServerError(request, resource);
 	}
 
 	private Response handlePost(Request request, Resource resource) {
-		String path = resource.getAbsolutePath();
-		if(resource.isFile(path)) {
+		String path = resource.getAbsolutePath(false);
+		if (resource.isFile(path)) {
 			OK OK = new OK(request, resource);
 			OK.setFile(true);
 			OK.setFilePath(path);
