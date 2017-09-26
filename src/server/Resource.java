@@ -47,7 +47,7 @@ public class Resource {
 
 	public boolean isFile(String path) {
 		File file = new File(path);
-		return file.isFile() ? true : false;
+		return file.isFile() || (file.exists() && !file.isDirectory()) ? true : false;
 	}
 
 	private String resolveUriPath(boolean isScript) {

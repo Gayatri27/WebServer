@@ -1,9 +1,573 @@
-Sep 26, 2017 1:01:47 AM server.ServerLog print
+Sep 26, 2017 1:45:07 AM server.ServerLog print
 INFO: Server initialized successfully
 
-Sep 26, 2017 1:01:48 AM server.ServerLog print
+Sep 26, 2017 1:45:07 AM server.ServerLog print
 INFO: Starting server on port 8096
 
-Sep 26, 2017 1:02:10 AM server.ServerLog print
+Sep 26, 2017 1:45:31 AM server.ServerLog print
 INFO: Connected to client 1
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Request from 1:
+GET / HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Response from 1:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 3143
+Date: 2017/09/26 01:45:31
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Connected to client 2
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Connected to client 3
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Request from 2:
+GET /js/image-test.js HTTP/1.1
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Response from 2:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 678
+Date: 2017/09/26 01:45:31
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Request from 3:
+GET /images/sushi.jpg HTTP/1.1
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Response from 3:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 38276
+Date: 2017/09/26 01:45:31
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Connected to client 4
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Request from 4:
+GET /favicon.ico HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:31 AM server.ServerLog print
+INFO: Response from 4:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 3143
+Date: 2017/09/26 01:45:31
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:39 AM server.ServerLog print
+INFO: Connected to client 5
+
+Sep 26, 2017 1:45:39 AM server.ServerLog print
+INFO: Request from 5:
+GET /protected/ HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:39 AM server.ServerLog print
+INFO: Response from 5:
+HTTP/1.1 401 Unauthorized
+Server: Gayatri Aishwarya Web Server 1.0
+WWW-Authenticate: Basic realm="I Challenge You"
+Content-Length: 33
+Date: 2017/09/26 01:45:39
+Content-Type: text/html
+
+<h1>401</h1><h2>Unauthorized</h2>
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Connected to client 6
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Request from 6:
+GET /protected/ HTTP/1.1
+Authorization: Basic anJvYjpwYXNzd29yZA==
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Response from 6:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 3143
+Date: 2017/09/26 01:45:53
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Connected to client 7
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Connected to client 8
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Request from 7:
+GET /js/image-test.js HTTP/1.1
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Response from 7:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 678
+Date: 2017/09/26 01:45:53
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Request from 8:
+GET /protected/images/sushi.jpg HTTP/1.1
+Authorization: Basic anJvYjpwYXNzd29yZA==
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:45:53 AM server.ServerLog print
+INFO: Response from 8:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 38276
+Date: 2017/09/26 01:45:53
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 9
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 9:
+GET /images/really-big-image.png HTTP/1.1
+Accept: */*
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 10
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 11
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 10:
+GET /test/1.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 12
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 11:
+GET /test/2.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 13
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 12:
+GET /test/3.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 14
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 13:
+GET /test/4.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 15
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 10:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 12:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 14:
+GET /test/5.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 13:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 14:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 11:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 16
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 15:
+GET /test/6.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 15:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 17
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 16:
+GET /test/7.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 18
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 17:
+GET /test/8.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Connected to client 19
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 18:
+GET /test/10.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Request from 19:
+GET /test/9.json HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 16:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 17:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 18:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 14
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:06 AM server.ServerLog print
+INFO: Response from 19:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 13
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:07 AM server.ServerLog print
+INFO: Response from 9:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 7105627
+Date: 2017/09/26 01:46:06
+Content-Type: text/html
+
+
+
+Sep 26, 2017 1:46:09 AM server.ServerLog print
+INFO: Connected to client 20
+
+Sep 26, 2017 1:46:11 AM server.ServerLog print
+INFO: Request from 20:
+GET /cgi-bin/perl_env HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0
+Referer: http://localhost:8096/protected/
+Connection: keep-alive
+Host: localhost:8096
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+
+null
+
+Sep 26, 2017 1:46:12 AM server.ServerLog print
+INFO: Response from 20:
+HTTP/1.1 200 OK
+Server: Gayatri Aishwarya Web Server 1.0
+Content-Length: 1128
+Date: 2017/09/26 01:46:12
+Content-Type: text/html
+
+Content-Type: text/html; charset=ISO-8859-1
+
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+APP_ICON_1297 = ../Resources/Eclipse.icns<br>
+APP_ICON_3964 = ../Resources/Eclipse.icns<br>
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.dYrIPgyGHg/Render<br>
+HOME = /Users/mayureshraut<br>
+JAVA_MAIN_CLASS_3989 = server.WebServer<br>
+JAVA_STARTED_ON_FIRST_THREAD_1297 = 1<br>
+JAVA_STARTED_ON_FIRST_THREAD_3964 = 1<br>
+LOGNAME = mayureshraut<br>
+PATH = /usr/bin:/bin:/usr/sbin:/sbin<br>
+SHELL = /bin/bash<br>
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.hg4DQc3ieI/Listeners<br>
+TMPDIR = /var/folders/df/yr2wl7cn77g7sfl2l6ml3tnm0000gn/T/<br>
+USER = mayureshraut<br>
+VERSIONER_PERL_PREFER_32_BIT = no<br>
+VERSIONER_PERL_VERSION = 5.18<br>
+XPC_FLAGS = 0x0<br>
+XPC_SERVICE_NAME = 0<br>
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0<br>
+
+</body>
+</html>
+
 
