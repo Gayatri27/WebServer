@@ -18,6 +18,7 @@ public class Constants {
 	public static final String ALIAS_TAG = "Alias";
 	public static final String ACCESS_FILE_NAME = "AccessFileName";
 	public static final String DIRECTORY_INDEX = "DirectoryIndex";
+	public static final int DEFAULT_PORT = 8080;
 
 	// _.htaccess tags
 	public static final String AUTH_USER_FILE_TAG = "AuthUserFile";
@@ -47,4 +48,12 @@ public class Constants {
 	public static final String DEFAULT_INDEX_FILE = "index.html";
 	public static final String LOGGER_NAME = "gayatri-aishwarya-web-server";
 	public static final String TEST_FILE_PATH = "src/server/output/test.file";
+	
+	// CGI
+	public static final String USR_PERL_EXTENSION = "#!/usr/bin/perl";
+    public static final String PERL_EXTENSION = "#!/bin/perl";
+    public static final String BASH_EXTENSION = "#!/bin/bash";
+    public static final String SH_EXTENSION = "#!/bin/sh";
+    public static final String RUBY_EXTENSION = "rb";
+    public static final String PHP_EXTENSION = "php";
 }

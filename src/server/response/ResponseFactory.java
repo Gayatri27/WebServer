@@ -85,7 +85,8 @@ public class ResponseFactory {
 	}
 
 	private Response processScript(Request request, Resource resource) {
-		String response = ResponseHelper.executeScript(request, resource);
+		ScriptHandler scriptHandler = new ScriptHandler();
+		String response = scriptHandler.executeScript(request, resource);
 		if (response == null)
 			return new InternalServerError(request, resource);
 		else {

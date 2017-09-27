@@ -1,9 +1,7 @@
 package server.response;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import server.Constants;
 import server.Resource;
@@ -36,34 +34,10 @@ public class ResponseHelper {
 		return false;
 	}
 
-	public static String executeScript(Request request, Resource resource) {
-		try {
-			String scriptPath = request.getAbsolutePath();
-			if(scriptPath == null) {
-				scriptPath = resource.getAbsolutePath(true);
-				request.setAbsolutePath(scriptPath);
-			}
-			Process process = Runtime.getRuntime().exec(scriptPath);
-			process.waitFor();
-			StringBuffer output = new StringBuffer();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-			String line = "";
-			while ((line = reader.readLine()) != null)
-				output.append(line + "\n");
-			return output.toString();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
 	public static boolean needsUpdate(Request request, Resource resource) {
 		if (request.containsIsModified()) {
 			String filePath = request.getAbsolutePath();
-			if(filePath == null) {
+			if (filePath == null) {
 				filePath = resource.getAbsolutePath(false);
 				request.setAbsolutePath(filePath);
 			}
@@ -84,12 +58,12 @@ public class ResponseHelper {
 		String mimeType = mimes.getMime(getUriExtension(request.getAbsolutePath()));
 		return mimeType != null ? mimeType : Constants.DEFAULT_MIME_TYPE;
 	}
-	
+
 	public static String getUriExtension(String uri) {
-		if(uri != null) {
+		if (uri != null) {
 			String[] content = uri.split("\\.");
 			int length = content.length;
-			if(length > 1)
+			if (length > 1)
 				return content[length - 1];
 		}
 		return null;

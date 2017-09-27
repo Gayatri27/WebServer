@@ -78,6 +78,8 @@ public class HttpdConf {
 	}
 
 	public int getPort() {
+		if(port == -1)
+			return Constants.DEFAULT_PORT;
 		return port;
 	}
 
