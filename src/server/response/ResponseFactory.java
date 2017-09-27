@@ -1,7 +1,6 @@
 package server.response;
 
 import server.Resource;
-import server.ServerLog;
 import server.WebServer;
 import server.request.Request;
 
@@ -44,9 +43,9 @@ public class ResponseFactory {
 		return request.isValid();
 	}
 
-	private boolean serverAuthenticationAvailable(Resource resource) {
-		return resource.isProtected();
-	}
+	// private boolean serverAuthenticationAvailable(Resource resource) {
+	// 	return resource.isProtected();
+	// }
 
 	private boolean authenticationRequired(Request request, Resource resource) {
 		String accessFileName = resource.getHttpConf().getAccessFileName();
