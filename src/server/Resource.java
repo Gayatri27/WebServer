@@ -20,7 +20,6 @@ public class Resource {
 
 	public String getAbsolutePath(boolean isScript) {
 		String absolutePath = resolveUriPath(isScript);
-		System.out.println("AbsolutePath: " + absolutePath);
 		return isFile(absolutePath) ? absolutePath : appendDirIndex(absolutePath);
 	}
 
@@ -98,7 +97,7 @@ public class Resource {
 		String indexFile = httpdConf.getDirectoryIndex();
 		content[content.length - 1] = indexFile == null ? Constants.DEFAULT_INDEX_FILE : indexFile;
 		StringBuilder builder = new StringBuilder();
-		// builder.append("/");
+		builder.append("/");
 		for (String str : content) {
 			if (builder.length() > 0)
 				builder.append("/");
