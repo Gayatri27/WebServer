@@ -19,8 +19,8 @@ public class ResponseFactory {
 			if (!validRequest(request))
 				return new BadRequest(request, resource);
 
-			if (!serverAuthenticationAvailable(resource))
-				return new NotFound(request, resource);
+			// if (!serverAuthenticationAvailable(resource))
+			// 	return new NotFound(request, resource);
 
 			if (authenticationRequired(request, resource)) {
 				if (!authHeaderAvailable(request))
