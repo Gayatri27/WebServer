@@ -1,5 +1,7 @@
 package server.conf;
 
+import java.net.URL;
+
 import server.Constants;
 import server.Utils;
 
@@ -19,7 +21,8 @@ public class Htaccess {
 	}
 
 	public void load() {
-		String file = Utils.readFile(Constants.HTACCESS_FILE_LOCATION);
+		URL path = Htaccess.class.getResource(Constants.HTACCESS_FILE_LOCATION);
+		String file = Utils.readFile(path.getPath());
 
 		if (file == null) {
 			isAvailable = false;

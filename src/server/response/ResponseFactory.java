@@ -1,8 +1,8 @@
 package server.response;
 
 import server.Resource;
+import server.ServerLog;
 import server.WebServer;
-import server.conf.Htpassword;
 import server.request.Request;
 
 public class ResponseFactory {
@@ -60,7 +60,8 @@ public class ResponseFactory {
 	}
 
 	private boolean userAuthenticated(Request request) {
-		return WebServer.getHtpassword().isAuthorized(request.getAuthInfo());
+		String authInfo = request.getAuthInfo();
+		return authInfo != null ? WebServer.getHtpassword().isAuthorized(request.getAuthInfo()) : false;
 	}
 
 	private boolean scriptAliased(Resource resource) {

@@ -1,19 +1,22 @@
 package server.conf;
 
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
+import server.Constants;
 import server.Utils;
 
 public class Htpassword {
-	
+
 	private static Map<String, String> users;
-	
+
 	public void load(String filePath) {
-		String file = Utils.readFile(filePath);
+		URL path = Htpassword.class.getResource(Constants.HTPASSWORD_FILE_LOCATION);
+		String file = Utils.readFile(path.getPath());
 		String[] lines = file.split("\\r?\\n");
 		for (String line : lines) {
 			if (users == null)

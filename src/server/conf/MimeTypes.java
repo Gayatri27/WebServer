@@ -1,5 +1,6 @@
 package server.conf;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import server.Utils;
@@ -11,7 +12,8 @@ public class MimeTypes {
 	private String file = null;
 
 	public MimeTypes(String fileName) {
-		file = Utils.readFile(fileName);
+		URL path = MimeTypes.class.getResource(fileName);
+		file = Utils.readFile(path.getPath());
 	}
 
 	public void load() {

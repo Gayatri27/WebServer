@@ -1,6 +1,7 @@
 package server;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Map;
 
 import server.conf.HttpdConf;
@@ -19,11 +20,13 @@ public class Resource {
 
 	public String getAbsolutePath(boolean isScript) {
 		String absolutePath = resolveUriPath(isScript);
+		System.out.println("AbsolutePath: " + absolutePath);
 		return isFile(absolutePath) ? absolutePath : appendDirIndex(absolutePath);
 	}
 
 	public boolean isProtected() {
-		File file = new File(httpdConf.getServerRoot() + Constants.CONFIG_FILES_LOCATION + "/_.htaccess");
+		URL path = HttpdConf.class.getResource(Constants.HTACCESS_FILE_LOCATION);
+		File file = new File(path.getPath());
 		return file.exists() ? true : false;
 	}
 
@@ -47,7 +50,13 @@ public class Resource {
 
 	public boolean isFile(String path) {
 		File file = new File(path);
-		return file.isFile() || (file.exists() && !file.isDirectory()) ? true : false;
+		if(file.exists()) {
+			if(file.isDirectory())
+				return false;
+			else if(file.isFile())
+				return true;
+		}
+		return false;
 	}
 
 	private String resolveUriPath(boolean isScript) {
@@ -89,6 +98,7 @@ public class Resource {
 		String indexFile = httpdConf.getDirectoryIndex();
 		content[content.length - 1] = indexFile == null ? Constants.DEFAULT_INDEX_FILE : indexFile;
 		StringBuilder builder = new StringBuilder();
+		// builder.append("/");
 		for (String str : content) {
 			if (builder.length() > 0)
 				builder.append("/");

@@ -1,5 +1,6 @@
 package server.conf;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +21,8 @@ public class HttpdConf {
 	String file = null;
 
 	public HttpdConf(String fileName) {
-		file = Utils.readFile(fileName);
+		URL path = HttpdConf.class.getResource(fileName);
+		file = Utils.readFile(path.getPath());
 	}
 
 	public void load() {

@@ -15,7 +15,6 @@ public class ServerLog {
 		try {
 			File f = new File(fileName);
 			if (!f.exists()) {
-				f.mkdirs();
 				f.createNewFile();
 			} else {
 				f.delete();
