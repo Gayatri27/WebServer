@@ -11,6 +11,7 @@ public class BadRequest extends Response {
 		super(request, resource);
 	}
 
+		// adding comment
 	@Override
 	public int getCode() {
 		return 400;
